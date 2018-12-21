@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Telegram Bot"
     
 api_url = "https://api.hphk.io/telegram"
 
@@ -31,7 +31,10 @@ def telegram():
     chat_id = tele_dict["message"]["from"]["id"]
     
     #유저가 입력한 데이터
-    text = tele_dict.get("message").get("text")#없으면 None으로 나옴
+    if tele_dict.get("message").get("text") == None:
+        text = "임시텍스트"
+    else:
+        text = tele_dict.get("message").get("text")#없으면 None으로 나옴
     #text =  tele_dict["message"]["text"]#없는 키값이기에 오류가 발생
     
     #사진인지 Text인지 구별필요
@@ -45,11 +48,9 @@ def telegram():
     #사용자가 텍스트를 넣었을 때
     else:
         #Naver Papago번역기
-        strData = text[:2]
-        if strData == "번역":
-            print(text)
+        if text[:3] == "번역 ":
             isTrans = True
-            text = text.replace(text,"안녕하세요")
+            text = text.replace(text,text[3:])
 
     
     if isTrans:
@@ -91,9 +92,12 @@ def telegram():
         #가져온 데이터 중에서 필요한 정보 빼오기
         
         #인식이 되었을 때
-        pp(clova.json())
+        #pp(clova.json())
         if clova.json().get('info').get('faceCount'):
             text = clova.json()['faces'][0]['celebrity']['value']
+            #text = clova.json()['faces'][0]['celebrity']
+            #추후에 싱크로율과 함께 나타내기 해볼 것.
+            
         #인식이 되지 않았을 때
         else :
             text = "인식이 되지 않습니다."
