@@ -8,6 +8,7 @@ Telegram Chat Bot
 ### text, file, photo일 때 접근방식
 
 ##### text
+```json
 {
    "update_id": ,
    "message": {
@@ -29,8 +30,10 @@ Telegram Chat Bot
       "text": "테스트"
    }
 }
+```
 
 ##### file
+```json
 {
    "update_id": ,
    "message": {
@@ -77,8 +80,10 @@ Telegram Chat Bot
       ]
    }
 }
+```
 
 ##### photo
+```json
 {
    "update_id": ,
    "message": {
@@ -126,8 +131,10 @@ Telegram Chat Bot
       "caption": ""
    }
 }
+```
 
 ##### video
+```json
 {
    "update_id": ,
    "message": {
@@ -162,8 +169,10 @@ Telegram Chat Bot
       }
    }
 }
+```
 
 ##### file
+```json
 {
    "update_id": ,
    "message": {
@@ -196,6 +205,7 @@ Telegram Chat Bot
       }
    }
 }
+```
 
 이 외에 location/대화상대(연락처)/이모티콘/녹음파일 등... 있다
 다중파일은 단일파일을 여러번 보내는 형식
