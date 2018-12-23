@@ -1,13 +1,11 @@
 # TeleChatbot
-Telegram Chat Bot
+Telegram Chat Bot​:robot:​
 
-​:robot:​
+## API의 JSON형태
 
-### API의 JSON형태
+## text, file, photo일 때 접근방식
 
-### text, file, photo일 때 접근방식
-
-##### text
+#### text
 ```json
 {
    "update_id": ,
@@ -32,57 +30,7 @@ Telegram Chat Bot
 }
 ```
 
-##### file
-```json
-{
-   "update_id": ,
-   "message": {
-      "message_id": ,
-      "from": {
-         "id": ,
-         "is_bot": false,
-         "first_name": "TaeJune",
-         "last_name": "Joung",
-         "language_code": "ko"
-      },
-      "chat": {
-         "id": ,
-         "first_name": "TaeJune",
-         "last_name": "Joung",
-         "type": "private"
-      },
-      "date": ,
-      "photo": [
-         {
-            "file_id": "",
-            "file_size": ,
-            "width": ,
-            "height": 
-         },
-         {
-            "file_id": "",
-            "file_size": ,
-            "width": ,
-            "height": 
-         },
-         {
-            "file_id": "",
-            "file_size": ,
-            "width": ,
-            "height": 
-         },
-         {
-            "file_id": "",
-            "file_size": ,
-            "width": ,
-            "height": 
-         }
-      ]
-   }
-}
-```
-
-##### photo
+#### photo
 ```json
 {
    "update_id": ,
@@ -133,7 +81,7 @@ Telegram Chat Bot
 }
 ```
 
-##### video
+#### video
 ```json
 {
    "update_id": ,
@@ -171,7 +119,7 @@ Telegram Chat Bot
 }
 ```
 
-##### file
+#### file
 ```json
 {
    "update_id": ,
